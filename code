@@ -1,0 +1,31 @@
+import os
+import time
+import numpy as np
+import pandas as pd
+
+import numpy as np
+from tqdm.notebook import tqdm
+
+import matplotlib.pyplot as plt
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import normalize
+from sklearn.metrics import confusion_matrix
+
+import keras
+import tensorflow as tf 
+from keras.models import Sequential
+from keras.layers import Dense
+     
+from keras import backend as K
+from keras.layers import Conv2D, MaxPooling2D, Dropout, Flatten, BatchNormalization
+
+from keras.callbacks import ModelCheckpoint
+import warnings
+warnings.filterwarnings('ignore')
+
+gpu_devices = tf.config.experimental.list_physical_devices('GPU')
+for device in gpu_devices:
+    tf.config.experimental.set_memory_growth(device, True)
+    
+! for a in /sys/bus/pci/devices/*; do echo 0 | sudo tee -a $a/numa_node; done
